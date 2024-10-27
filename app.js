@@ -9,24 +9,24 @@ let height = canvas.height;
 let drawing = false;
 let startX, startY;
 
-canvas.addEventListener("mousedown", e => {
+canvas.addEventListener('mousedown', (e) => {
     drawing = true;
     startX = e.offsetX;
     startY = e.offsetY;
 });
 
-canvas.addEventListener("mousemove", e => {
+canvas.addEventListener('mousemove', (e) => {
     if (drawing) {
         draw(e.offsetX, e.offsetY);
     }
 });
 
-canvas.addEventListener("mouseup", () => {
+canvas.addEventListener('mouseup', () => {
     drawing = false;
     ctx.closePath();
 });
 
-canvas.addEventListener("mouseout", () => {
+canvas.addEventListener('mouseout', () => {
     drawing = false;
 });
 
@@ -56,8 +56,8 @@ else if (tool === 'circle') {
 let colorInput = document.getElementById('color');
 function draw(x, y) {
     ctx.strokeStyle = colorInput.value;
-    ctx.lineWidth = 2;}
-    
+    ctx.lineWidth = 2};
+
 //enable clear the canvas
 document.querySelector("#clear").addEventListener("click",()=>{
     ctx.clearRect(0,0,width,height)
