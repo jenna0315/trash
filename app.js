@@ -51,4 +51,14 @@ else if (tool === 'circle') {
     ctx.stroke();
 }
 
-
+//Task 4: Add Color Selection and Canvas Clearing
+//enable color picker
+let colorInput = document.getElementById('color');
+function draw(x, y) {
+    ctx.strokeStyle = colorInput.value;
+    ctx.lineWidth = 2;}
+    
+//enable clear the canvas
+document.querySelector("#clear").addEventListener("click",()=>{
+    ctx.clearRect(0,0,width,height)
+});
