@@ -29,3 +29,26 @@ canvas.addEventListener("mouseup", () => {
 canvas.addEventListener("mouseout", () => {
     drawing = false;
 });
+
+//Task 3: Implement Shape Drawing Logic
+//enable shape picker
+const tool = document.querySelector('input[name="tool"]:checked').value;
+
+if (tool === 'line') {
+    ctx.beginPath();
+    ctx.moveTo(startX, startY);
+    ctx.lineTo(x, y);
+    ctx.stroke();
+} 
+else if (tool === 'rectangle') {
+    ctx.beginPath();
+    ctx.rect(startX, startY, x - startX, y - startY);
+    ctx.stroke();
+} 
+else if (tool === 'circle') {
+    ctx.beginPath();
+    ctx.arc(startX, startY, 10, 0, Math.PI*2,false);
+    ctx.stroke();
+}
+
+
