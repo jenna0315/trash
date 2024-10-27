@@ -31,13 +31,13 @@ canvas.addEventListener('mouseout', () => {
 });
 
 //Task 3: Implement Shape Drawing Logic
-//enable shape picker
-//enable color picker
 let colorInput = document.getElementById('color');
+// Drawing function for different shapes
 function draw(x, y) {
     const tool = document.querySelector('input[name="tool"]:checked').value;
-    ctx.strokeStyle = document.getElementById('color').value;
-    ctx.lineWidth = 2;
+    ctx.strokeStyle = colorInput.value; // Use selected color
+    ctx.lineWidth = 2;}
+
 
 if (tool === 'line') {
     ctx.beginPath();
@@ -60,4 +60,4 @@ else if (tool === 'circle') {
 //enable clear the canvas
 document.querySelector("#clear").addEventListener("click",()=>{
     ctx.clearRect(0,0,width,height)
-});
+})
