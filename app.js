@@ -36,8 +36,7 @@ let colorInput = document.getElementById('color');
 function draw(x, y) {
     const tool = document.querySelector('input[name="tool"]:checked').value;
     ctx.strokeStyle = colorInput.value; // Use selected color
-    ctx.lineWidth = 2;}
-
+    ctx.lineWidth = 2;
 
 if (tool === 'line') {
     ctx.beginPath();
@@ -54,7 +53,7 @@ else if (tool === 'circle') {
     ctx.beginPath();
     ctx.arc(startX, startY, 10, 0, Math.PI*2,false);
     ctx.stroke();
-}
+}}
 
 //Task 4: Add Color Selection and Canvas Clearing
 //enable clear the canvas
